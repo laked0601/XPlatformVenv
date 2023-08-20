@@ -20,6 +20,7 @@ rem Add project directory to path on running of each file
 set customize_path=.\%project_name%\env\Lib\site-packages\sitecustomize.py
 
 echo from sys import path > %customize_path%
+echo from os import pardir >> %customize_path%
 echo from os.path import abspath, dirname, join >> %customize_path%
 echo script_directory = abspath(dirname(__file__)) >> %customize_path%
 echo target_directory = abspath(join(script_directory, pardir, pardir, pardir)) >> %customize_path%
